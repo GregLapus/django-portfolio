@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    background: #F5F7F8;
+    color: #1C2B2E;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 80px;
+    background: linear-gradient(135deg, #0E7C86 0%, #6FD3DB 50%, #FFFFFF 100%);
+    position: relative;
+    z-index: 1000;
+    gap: 40px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-right: 0;
+}
+
+.logo span {
+    color: #6FD3DB; /* Primary Light */
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #A6E3E9; /* Highlight Glow */
+}
+
+nav a.active {
+    color: #A6E3E9;
+    font-weight: bold;
+}
+
+/* NAV BUTTON */
+.btn-nav {
+    background: #1FA6B3; /* Primary */
+    color: #FFFFFF;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-left: auto;
+}
+
+.btn-nav:hover {
+    background: #0E7C86;
+}
+
+/* HOME SECTION */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    height: 90vh;
+    background: radial-gradient(circle at right, #A6E3E9 0%, transparent 40%);
+}
+
+/* TEXT */
+.home-text {
+    max-width: 500px;
+}
+
+.home-text h4 {
+    color: #5F6F73;
+    margin-bottom: 10px;
+}
+
+.home-text h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.home-text span {
+    color: #1FA6B3; /* Primary */
+}
+
+.home-text p {
+    color: #5F6F73;
+    margin-bottom: 25px;
+}
+
+/* BUTTONS */
+.buttons {
+    margin-bottom: 20px;
+}
+
+.btn-dark {
+    background: #1FA6B3;
+    color: #FFFFFF;
+    padding: 12px 25px;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-dark:hover {
+    background: #0E7C86;
+}
+
+.btn-outline {
+    border: 2px solid #1FA6B3;
+    color: #1FA6B3;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #1FA6B3;
+    color: #FFFFFF;
+}
+
+/* SOCIAL ICONS */
+.socials a {
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid #9FA7AA;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #1FA6B3;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background: #1FA6B3;
+    color: #FFFFFF;
+    box-shadow: 0 0 10px #A6E3E9; /* Glow effect */
+}
+
+/* HOME IMAGE */
+.home-image {
+    position: relative; /* For optional glow behind image */
+}
+
+.home-image img {
+    width: 850px;
+    object-fit: cover;
+
+    /* REMOVE BOX/WHITE BORDER */
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+
+    /* Optional soft shadow for depth */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+}
+
+/* OPTIONAL: Soft glow behind image like in your design */
+.home-image::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #A6E3E9; /* Highlight Glow */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(80px);
+    z-index: -1;
+}
+#waterCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* THIS ALLOWS CLICKING THROUGH */
+    z-index: 1;
+}
