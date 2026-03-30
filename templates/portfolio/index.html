@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Portfolio</title>
+
+    {% load static %}
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="{% static 'my_portfolio.css' %}">
+
+    <link rel="stylesheet" href="{% static 'light-mode.css' %}">
+
+    <link rel="stylesheet" href="{% static 'dark-mode.css' %}">
+
+    <!-- ICONS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">Kayden<span></span> </></div>
+
+    <nav>
+
+        <a href="{% url 'index' %}" onclick="console.log('Home clicked'); return true;">Home</a>
+
+        <a href="{% url 'about' %}" onclick="console.log('About clicked'); return true;">About</a>
+
+        <a href="{% url 'projects' %}" onclick="console.log('Projects clicked'); return true;">Portfolio</a>
+
+    </nav>
+
+    <a href="#" class="btn-nav" onclick="toggleTheme(); return false;"> Dark Mode</a>
+
+</header>
+
+
+
+<!-- HOME SECTION -->
+
+<section id="home" class="home">
+
+
+
+    <!-- TEXT -->
+
+    <div class="home-text">
+
+        <h4>Hi, I'm Greg Lapus!</h4>
+
+        <h1>
+
+            Graphic <span>DESIGNER</span>
+
+        </h1>
+
+        <p>
+
+            "Thirty years east, thirty years west, don't bully the poor young" - Xiao Yan (From Battle Through The Heavens)
+
+        </p>
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <a href="{% url 'projects' %}" class="btn-dark">Projects</a>
+
+            <a href="{% url 'other_skills' %}" class="btn-outline">Other Skills</a>
+
+        </div>
+
+        <!-- SOCIALS -->
+
+        <div class="socials">
+
+            <a href="https://www.facebook.com/gregnamocolapusii/" target="_blank">
+
+                <i class="fab fa-facebook-f"></i>
+
+            </a>
+
+            <a href="https://www.instagram.com/kaydenxyz" target="_blank">
+
+                <i class="fab fa-instagram"></i>
+
+            </a>
+
+            <a href="https://www.tiktok.com/@its.mekayden" target="_blank">
+
+                <i class="fab fa-tiktok"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- IMAGE -->
+
+    <div class="home-image">
+
+        <img src="{% static 'images/profile.png' %}" alt="Profile">
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- OPTIONAL: Other sections like Portfolio / Contact here -->
+
+
+
+<!-- Water ripple script temporarily disabled for testing -->
+
+
+
+<!-- Theme Toggle Script -->
+
+<script>
+
+function toggleTheme() {
+
+    const body = document.body;
+
+    const themeButton = document.querySelector('.btn-nav');
+
+    
+
+    // Toggle dark mode class
+
+    body.classList.toggle('dark-mode');
+
+    
+
+    // Update button text and icon
+
+    if (body.classList.contains('dark-mode')) {
+
+        themeButton.innerHTML = '☀️ Light Mode';
+
+        localStorage.setItem('theme', 'dark');
+
+    } else {
+
+        themeButton.innerHTML = '🌙 Dark Mode';
+
+        localStorage.setItem('theme', 'light');
+
+    }
+
+}
+
+
+
+// Load saved theme on page load
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const savedTheme = localStorage.getItem('theme');
+
+    const themeButton = document.querySelector('.btn-nav');
+
+    
+
+    if (savedTheme === 'dark') {
+
+        document.body.classList.add('dark-mode');
+
+        themeButton.textContent = ' Light Mode';
+
+    }
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Other Skills - Portfolio</title>
+
+    <!-- Link the same CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'my_portfolio.css' %}">
+    <link rel="stylesheet" href="{% static 'light-mode.css' %}">
+    <link rel="stylesheet" href="{% static 'dark-mode.css' %}">
+    <link rel="stylesheet" href="{% static 'other_skills.css' %}">
+    
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Glassmorphism Background Elements -->
+<div class="glass-bg glass-bg-1"></div>
+<div class="glass-bg glass-bg-2"></div>
+<div class="glass-bg glass-bg-3"></div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">Kayden<span></span> </></div>
+    
+    <nav>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'projects' %}">Portfolio</a>
+    </nav>
+    
+    <a href="#" class="btn-nav" onclick="toggleTheme(); return false;">🌙 Dark Mode</a>
+</header>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills">
+    <div class="skills-container">
+        <h2>My Other Skills & Drawings</h2>
+        <div class="skills-grid">
+            
+            <!-- Drawing 1 -->
+            <div class="skill-card">
+                <img src="{% static 'images/art 1.jpg' %}" alt="Art 1" class="skill-image">
+                <div class="caption">
+                    <p>Artwork #1</p>
+                </div>
+            </div>
+
+            <!-- Drawing 2 -->
+            <div class="skill-card">
+                <img src="{% static 'images/art 2.jpg' %}" alt="Art 2" class="skill-image">
+                <div class="caption">
+                    <p>Artwork #2</p>
+                </div>
+            </div>
+
+            <!-- Drawing 3 -->
+            <div class="skill-card">
+                <img src="{% static 'images/art 3.jpg' %}" alt="Art 3" class="skill-image">
+                <div class="caption">
+                    <p>Artwork #3</p>
+                </div>
+            </div>
+
+            <!-- Drawing 4 -->
+            <div class="skill-card">
+                <img src="{% static 'images/art 4.jpg' %}" alt="Art 4" class="skill-image">
+                <div class="caption">
+                    <p>Artwork #4</p>
+                </div>
+            </div>
+
+            <!-- Drawing 5 -->
+            <div class="skill-card">
+                <img src="{% static 'images/art 5.jpg' %}" alt="Art 5" class="skill-image">
+                <div class="caption">
+                    <p>Artwork #5</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <button class="lightbox-nav lightbox-prev" onclick="navigateImage(-1)">‹</button>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Full size artwork">
+    <button class="lightbox-nav lightbox-next" onclick="navigateImage(1)">›</button>
+</div>
+
+<!-- Theme Toggle Script -->
+<script>
+function toggleTheme() {
+    const body = document.body;
+    const themeButton = document.querySelector('.btn-nav');
+    
+    // Toggle dark mode class
+    body.classList.toggle('dark-mode');
+    
+    // Update button text and icon
+    if (body.classList.contains('dark-mode')) {
+        themeButton.innerHTML = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeButton.innerHTML = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Load saved theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme');
+    const themeButton = document.querySelector('.btn-nav');
+    
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeButton.innerHTML = '☀️ Light Mode';
+    }
+    
+    // Add click event listeners to all skill images
+    const skillImages = document.querySelectorAll('.skill-image');
+    console.log('Found skill images:', skillImages.length); // Debug line
+    
+    skillImages.forEach(image => {
+        console.log('Adding click listener to:', image.src); // Debug line
+        image.addEventListener('click', function() {
+            console.log('Image clicked:', this.src); // Debug line
+            openLightbox(this.src);
+        });
+    });
+    
+    // Add click event to close lightbox when clicking on background
+    const lightbox = document.getElementById('lightbox');
+    
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // Add ESC key to close lightbox
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+});
+
+// Lightbox functions
+let currentImageIndex = 0;
+const images = ['{% static "images/art 1.jpg" %}', '{% static "images/art 2.jpg" %}', '{% static "images/art 3.jpg" %}', '{% static "images/art 4.jpg" %}', '{% static "images/art 5.jpg" %}'];
+
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    // Find the index of the clicked image
+    currentImageIndex = images.findIndex(img => imageSrc.includes(img));
+    
+    lightboxImg.src = imageSrc;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restore scrolling when lightbox is closed
+}
+
+function navigateImage(direction) {
+    currentImageIndex += direction;
+    
+    // Wrap around if we go past the beginning or end
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+    }
+    
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = images[currentImageIndex];
+    
+    // Add a small fade effect
+    lightboxImg.style.opacity = '0';
+    setTimeout(() => {
+        lightboxImg.style.opacity = '1';
+    }, 100);
+}
+</script>
+
+
+
+</body>
+
+
+
+</html>

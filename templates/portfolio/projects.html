@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Projects</title>
+
+    <!-- Link the same CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'my_portfolio.css' %}">
+    <link rel="stylesheet" href="{% static 'light-mode.css' %}">
+    <link rel="stylesheet" href="{% static 'dark-mode.css' %}">
+    
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Glassmorphism Background Elements -->
+<div class="glass-bg glass-bg-1"></div>
+<div class="glass-bg glass-bg-2"></div>
+<div class="glass-bg glass-bg-3"></div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">Kayden<span></span> </></div>
+
+    <nav>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'projects' %}">Portfolio</a>
+    </nav>
+
+    <a href="#" class="btn-nav" onclick="toggleTheme(); return false;">🌙 Dark Mode</a>
+</header>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="projects">
+
+    <div class="projects-container">
+        
+        <h2>My Skills & Expertise</h2>
+
+        <div class="skills-content">
+            
+            <!-- Technical Skills Section -->
+            <div class="skills-section">
+                <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+                <ul class="skills-list">
+                    <li>Graphic Design (Digital and Print)</li>
+                    <li>Tarpaulin Design</li>
+                </ul>
+            </div>
+
+            <!-- Professional Skills Section -->
+            <div class="skills-section">
+                <h3><i class="fas fa-briefcase"></i> Professional Skills</h3>
+                <ul class="skills-list">
+                    <li>Attention to Detail</li>
+                    <li>Teamwork and Collaboration</li>
+                    <li>Adaptability and Quick Learning</li>
+                    <li>Work Ethic and Reliability</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Projects Section -->
+        <h3 class="projects-heading">Projects</h3>
+
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h4><i class="fas fa-graduation-cap"></i> TESDA CSNI Training Projects</h4>
+                <p class="project-description">
+                    Completed various computer service and networking tasks, including basic hardware setup, software installation, and troubleshooting.
+                </p>
+                <div class="project-tools">
+                    <span class="tools-label">Tools/Technologies Used:</span>
+                    <ul class="tools-list">
+                        <li>Computer hardware</li>
+                        <li>Windows OS</li>
+                        <li>Basic networking tools</li>
+                        <li>Diagnostic software</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h4><i class="fas fa-palette"></i> Graphic Design for ETC Embroidery and Tarpaulin Creation</h4>
+                <p class="project-description">
+                    Designed banners, tarpaulins, and logos for clients, creating visually appealing and accurate outputs from concept to final product.
+                </p>
+                <div class="project-tools">
+                    <span class="tools-label">Tools/Technologies Used:</span>
+                    <ul class="tools-list">
+                        <li>Adobe Photoshop</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h4><i class="fas fa-store"></i> Product Display at Himalayan Lamp Salt</h4>
+                <p class="project-description">
+                    Assisted in product arrangement, engaged with customers, and promoted products to boost sales and enhance customer experience.
+                </p>
+                <div class="project-tools">
+                    <span class="tools-label">Tools/Technologies Used:</span>
+                    <ul class="tools-list">
+                        <li>N/A – focused on customer interaction and sales techniques</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Theme Toggle Script -->
+<script>
+function toggleTheme() {
+    const body = document.body;
+    const themeButton = document.querySelector('.btn-nav');
+    
+    // Toggle dark mode class
+    body.classList.toggle('dark-mode');
+    
+    // Update button text and icon
+    if (body.classList.contains('dark-mode')) {
+        themeButton.innerHTML = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeButton.innerHTML = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Load saved theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme');
+    const themeButton = document.querySelector('.btn-nav');
+    
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeButton.innerHTML = '☀️ Light Mode';
+    }
+});
+</script>
+
+</body>
+</html>

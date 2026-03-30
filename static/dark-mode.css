@@ -1,0 +1,300 @@
+/* Dark Mode Styles for All Pages */
+
+/* Base dark mode styles */
+body.dark-mode {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    color: #ffffff;
+}
+
+/* Glassmorphism background elements - Dark Mode */
+body.dark-mode .glass-bg-1 {
+    background: #444444;
+}
+
+body.dark-mode .glass-bg-2 {
+    background: #555555;
+}
+
+body.dark-mode .glass-bg-3 {
+    background: #666666;
+}
+
+/* Dark mode navbar */
+body.dark-mode .navbar {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #0a0a0a 100%) !important;
+}
+
+/* Index page dark mode */
+body.dark-mode .home {
+    background: radial-gradient(circle at right, #2a2a2a 0%, transparent 40%);
+}
+
+body.dark-mode .home-text h4,
+body.dark-mode .home-text p {
+    color: #cccccc;
+}
+
+body.dark-mode .btn-dark {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+body.dark-mode .btn-dark:hover {
+    background: #e0e0e0;
+}
+
+body.dark-mode .btn-outline {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-outline:hover {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+body.dark-mode .socials a {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+body.dark-mode .socials a:hover {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+/* About page dark mode */
+body.dark-mode .about-container {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .about-container h2 {
+    color: #e0e0e0 !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-mode .about-box {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .about-box:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .about-box h3 {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .about-box p {
+    color: #ffffff !important;
+}
+
+body.dark-mode .info-group {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .info-group:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .info-group h3 {
+    color: #e0e0e0 !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .info-details p {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .info-details strong {
+    color: #898AC4 !important;
+}
+
+body.dark-mode .profile-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .profile-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .profile-image {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .profile-info h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .profile-title {
+    color: #cccccc !important;
+}
+
+body.dark-mode .timeline-item::before {
+    background: rgba(162, 173, 219, 0.3) !important;
+}
+
+body.dark-mode .timeline-dot {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 0 0 10px rgba(162, 173, 219, 0.3) !important;
+}
+
+body.dark-mode .timeline-content {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .timeline-content h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .timeline-content p {
+    color: #ffffff !important;
+}
+
+body.dark-mode .timeline-date {
+    color: #ffffff !important;
+    background: rgba(162, 173, 219, 0.2) !important;
+}
+
+/* Projects page dark mode */
+body.dark-mode .projects-container {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .projects-container h2 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-mode .skills-section {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .skills-section:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .skills-section h3 {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .skills-list li {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .skills-list li:before {
+    color: #a2aadb !important;
+}
+
+body.dark-mode .projects-heading {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-mode .project-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .project-card h4 {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .project-description {
+    color: #ffffff !important;
+}
+
+body.dark-mode .project-tools {
+    border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .tools-label {
+    color: #ffffff !important;
+}
+
+body.dark-mode .project-tools .tools-list li {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .project-tools .tools-list li:before {
+    color: #a2aadb !important;
+}
+
+/* Other Skills page dark mode */
+body.dark-mode .skills-container {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .skills-container h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .skill-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .skill-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .skill-card h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .skill-card p {
+    color: #ffffff !important;
+}
+
+body.dark-mode .caption {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .caption p {
+    color: #ffffff !important;
+}
+
+/* Contact Section Dark Mode */
+body.dark-mode .contact-item {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .contact-item:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .contact-item h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .contact-item h3 i {
+    color: #a2aadb !important;
+}
+
+body.dark-mode .contact-item p {
+    color: #ffffff !important;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me - Portfolio</title>
+
+    <!-- Link the same CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'my_portfolio.css' %}">
+    <link rel="stylesheet" href="{% static 'light-mode.css' %}">
+    <link rel="stylesheet" href="{% static 'dark-mode.css' %}">
+    
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Glassmorphism Background Elements -->
+<div class="glass-bg glass-bg-1"></div>
+<div class="glass-bg glass-bg-2"></div>
+<div class="glass-bg glass-bg-3"></div>
+
+<!-- NAVBAR (same as in index.html) -->
+<header class="navbar">
+    <div class="logo">Kayden<span></span> </></div>
+
+    <nav>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'projects' %}">Portfolio</a>
+    </nav>
+
+    <a href="#" class="btn-nav" onclick="toggleTheme(); return false;">🌙 Dark Mode</a>
+</header>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about">
+
+    <div class="about-container">
+        
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-card">
+                <img src="{% static 'images/profile.png' %}" alt="Profile" class="profile-image">
+                <div class="profile-info">
+                    <h2>Gregorio N. Lapus</h2>
+                    <p class="profile-title">Graphic Designer & IT Student</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Personal Information</h2>
+
+        <div class="contact-section">
+            
+            <!-- Contact Details -->
+            <div class="contact-grid">
+                
+                <!-- Email -->
+                <div class="contact-item">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>lapusgregorio05@gmail.com</p>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-item">
+                    <h3><i class="fas fa-phone"></i> Contact Number</h3>
+                    <p>09670729312</p>
+                </div>
+
+                <!-- Address -->
+                <div class="contact-item">
+                    <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                    <p>Brgy. Tabugon, Kabankalan City<br>Negros Occidental, 6111</p>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="contact-item">
+                    <h3><i class="fas fa-birthday-cake"></i> Date of Birth</h3>
+                    <p>October 5, 1998</p>
+                </div>
+
+                <!-- Birth Place -->
+                <div class="contact-item">
+                    <h3><i class="fas fa-home"></i> Birth Place</h3>
+                    <p>Lapu-lapu City, Cebu City</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Timeline Content -->
+        <div class="timeline-section">
+            
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Current Education</h3>
+                    <p>Bachelor of Science in Information Technology at Negros Oriental State University</p>
+                    <span class="timeline-date">2026 - Present</span>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Professional Experience</h3>
+                    <p>Graphic Designer at ETC Embroidery and Tarpaulin Creation</p>
+                    <span class="timeline-date">2019 - 2020</span>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Skills Development</h3>
+                    <p><strong>2016-2017:</strong> TESDA CSNI Training</p>
+                    <p><strong>2018-2019:</strong> CSS NCII Certification</p>
+                    <span class="timeline-date">2016 - 2019</span>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>Profile Section</h2>
+
+        <div class="about-content">
+            
+            <!-- Personal Background -->
+            <div class="about-box">
+                <h3>Personal Background</h3>
+                <p>
+                    After graduating from high school, I enrolled in TESDA as a CSNI student. 
+                    Upon completing my TESDA training, I gained work experience as a housekeeper 
+                    at Gaisano Mall in Kabankalan City. I also graduated in TABUGON NATIONAL SENIOR HIGH SCHOOL as CSS NCII passer with certificate. 
+                    I also worked as a graphic artist at ETC Embroidery and Tarpaulin Creation in Mandaue City, Cebu, and as a sales associate at 
+                    Himalayan Lamp Salt in SM Mall, Bacolod City. These experiences have helped me develop strong work ethics, adaptability, 
+                    and skills in customer service and creative design.
+            </div>
+
+            <!-- Career Goals -->
+            <div class="about-box">
+                <h3>Career Interests / Goals</h3>
+                <p>
+                    I am interested in roles that allow me to develop my skills in customer service and communication. 
+                    My goal is to build a successful career by gaining practical experience, contributing to my team, 
+                    and continuously improving my abilities.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Theme Toggle Script -->
+<script>
+function toggleTheme() {
+    const body = document.body;
+    const themeButton = document.querySelector('.btn-nav');
+    
+    // Toggle dark mode class
+    body.classList.toggle('dark-mode');
+    
+    // Update button text and icon
+    if (body.classList.contains('dark-mode')) {
+        themeButton.innerHTML = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeButton.innerHTML = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Load saved theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme');
+    const themeButton = document.querySelector('.btn-nav');
+    
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeButton.textContent = ' Light Mode';
+    }
+});
+</script>
+
+</body>
+</html>
