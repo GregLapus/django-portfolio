@@ -12,7 +12,7 @@ This is a Django web application project.
 ## ⚙️ Setup Instructions
 
 1. Clone the repository:
-https://github.com/GregorioLapus/django-portfolio.git
+https://github.com/GregLapus?tab=repositories
 
 2. Go to the project folder:
 cd your-repo-name
