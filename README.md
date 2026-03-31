@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Django Project
 
 ## 📌 Description
@@ -35,3 +36,6 @@ python manage.py runserver
 
 ## 👤 Author
 Gregorio N. Lapus
+=======
+# django-portfolio
+>>>>>>> bf4df8efba3241536c8bd322867026eb3a2c019e
